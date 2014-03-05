@@ -1,0 +1,346 @@
+fileFormatVersion: 2
+guid: fd834b2339203ef46beaa8cea0128219
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -2
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 10
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: doubletrail
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 478
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: nyan1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 478
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: tail1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 478
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: legs1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 478
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: headoutline
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 478
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: headfill
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 478
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: eyes
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 478
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: eyehighlights
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 478
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: nose
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 478
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: cheeks
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 478
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: mouth
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 478
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: bodyoutline
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 478
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: bodyfill
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 478
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: singletrail
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 444
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: nyan2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 444
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: tail2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 444
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: nyan3
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 410
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: tail3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 410
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: nyan4
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 376
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: tail4
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 376
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: NyanInProgress_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 342
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: nyan5
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 342
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: tail5
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 342
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: nyan6
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 308
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: tail6
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 308
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: legs2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 444
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: legs3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 410
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: legs4
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 376
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: legs5
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 342
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: legs6
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 308
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: poptartframe
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 444
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: poptartfrosting
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 444
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: poptartsprinkles
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 444
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+  spritePackingTag: 
+  userData: 
