@@ -3,31 +3,33 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public bool Paused;
+    public bool IsPaused;
     protected float previousTimeScale;
 
-    void Awake() {
-        Pause();
-    }
-
     void Start() {
+        Pause();
         StartCoroutine( WaitForFirstInput() );
     }
 
     public void Pause() {
         previousTimeScale = Time.timeScale;
-        Paused = true;
+        IsPaused = true;
         Time.timeScale = 0;
     }
 
     public void Unpause() {
         Time.timeScale = previousTimeScale;
-        Paused = false;
+        IsPaused = false;
+    }
+
+    public void TogglePause() {
+        if( IsPaused ) Unpause();
+        else Pause();
     }
 
     IEnumerator WaitForFirstInput() {
-        while( Paused ) {
-            if ( Paused && Input.GetMouseButton( 0 ) ) Unpause();
+        while( IsPaused ) {
+            if ( Input.GetMouseButton( 0 ) ) Unpause();
             yield return null;
         }
     }

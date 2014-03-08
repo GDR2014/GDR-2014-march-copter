@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
     }
 
     void Update() {
-        if( Input.GetMouseButton( 0 ) ) Hover();
+        if( Input.GetMouseButton( 0 ) && !gameManager.IsPaused ) Hover();
     }
 
     void Hover() {
