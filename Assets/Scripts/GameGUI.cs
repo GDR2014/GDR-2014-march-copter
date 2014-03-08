@@ -10,6 +10,10 @@ public class GameGUI : MonoBehaviour {
 
     protected string debugControlHelp = "Press <R> to reset\nPress <P> to pause";
 
+    public int FontSizeScore = 20;
+    public Rect
+        ScorePosition;
+
     void Awake() {
         matrixVector = new Vector3( Screen.width / NativeWidth, Screen.height / NativeHeight, 1 );
     }
@@ -17,6 +21,13 @@ public class GameGUI : MonoBehaviour {
     void OnGUI() {
         GUI.matrix = Matrix4x4.TRS( Vector3.zero, Quaternion.identity, matrixVector );
         DrawDebugHelpGUI();
+        DrawScore();
+    }
+
+    void DrawScore() {
+        GUI.skin.label.fontStyle = FontStyle.Bold;
+        GUI.skin.label.fontSize = FontSizeScore;
+        GUI.Label( ScorePosition, "Score: " + ScoreManager.Score + "\nBest: " + ScoreManager.Best );
     }
 
     void DrawDebugHelpGUI() {

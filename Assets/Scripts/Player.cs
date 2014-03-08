@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
 
     void Update() {
         if( Input.GetMouseButtonDown( 0 ) || Input.GetMouseButtonUp( 0 )) StopAcceleration();
-        if( Input.GetMouseButton( 0 ) && !gameManager.IsPaused ) Hover();
+        if( Input.GetMouseButton( 0 ) && !gameManager.IsPaused ) Hover(); // TODO: Hover should be called in fixed update
     }
 
     void Hover() {
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour {
     void OnTriggerEnter2D( Collider2D c ) {
         switch( c.tag ) {
             case "TerrainQuad":
-                gameManager.Pause();
+                gameManager.Pause(); // TODO: Play animation and show score
                 break;
         }
     }
