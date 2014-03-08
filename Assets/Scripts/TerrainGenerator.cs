@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour {
 
@@ -19,7 +20,8 @@ public class TerrainGenerator : MonoBehaviour {
 
     private TerrainSegment SpawnSegment() {
         Vector2 pos = transform.position;
-        pos.y += Random.Range( -1.3f, 1.3f ); // TODO: Make better terrain algorithm
+        pos.y += (float) Math.Sin( Time.time * 1.3 );
+        //pos.y += Random.Range( -1.3f, 1.3f ); // TODO: Make better terrain algorithm
         return ObjectPool.Spawn( TerrainSegmentPrefab, pos );
     }
 
