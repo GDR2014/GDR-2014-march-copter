@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour {
     }
 
     IEnumerator WaitForFirstInput() {
-        while( Paused ) if ( Paused && Input.GetMouseButton( 0 ) ) Unpause(); yield break;
+        while( Paused ) {
+            if ( Paused && Input.GetMouseButton( 0 ) ) Unpause();
+            yield return null;
+        }
     }
 }
