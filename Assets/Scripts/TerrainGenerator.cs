@@ -11,7 +11,7 @@ public class TerrainGenerator : MonoBehaviour {
         width = TerrainSegmentPrefab.Width;
         width = width - ( width * TerrainSegmentPrefab.OverlapPercentage ); // Apply overlap to reduce jitter
         speed = TerrainSegmentPrefab.MoveSpeed;
-        KickstartTerrainPool(30); // Spawn and recycle, in order to give the pool time to initialize before real spawning
+        //KickstartTerrainPool(30); // Spawn and recycle, in order to give the pool time to initialize before real spawning
     }
 
     private void Start() {
@@ -20,8 +20,9 @@ public class TerrainGenerator : MonoBehaviour {
 
     private TerrainSegment SpawnSegment() {
         Vector2 pos = transform.position;
-        pos.y += (float) Math.Sin( Time.time * 1.3 );
-        //pos.y += Random.Range( -1.3f, 1.3f ); // TODO: Make better terrain algorithm
+        // TODO: Make better terrain algorithm
+        pos.y += (float) Math.Sin( (Time.time * 2 - .3) * 1.3 );
+        //pos.y += Random.Range( -1.3f, 1.3f ); 
         return ObjectPool.Spawn( TerrainSegmentPrefab, pos );
     }
 
