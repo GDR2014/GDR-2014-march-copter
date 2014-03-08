@@ -13,8 +13,12 @@ public class Player : MonoBehaviour {
     }
 
     void Update() {
-        if( Input.GetMouseButtonDown( 0 ) || Input.GetMouseButtonUp( 0 )) StopAcceleration();
-        if( Input.GetMouseButton( 0 ) && !gameManager.IsPaused ) Hover(); // TODO: Hover should be called in fixed update
+        HandleInput();
+    }
+
+    void HandleInput() {
+        if ( InputManager.HoverPressed || InputManager.HoverReleased ) StopAcceleration();
+        if ( InputManager.HoverHeld && !GameManager.IsPaused ) Hover(); // TODO: Hover should be called in fixed update
     }
 
     void Hover() {
@@ -26,10 +30,15 @@ public class Player : MonoBehaviour {
         rigidbody2D.velocity = new Vector2();
     }
 
+    void Die() {
+        // TODO: Play death animation
+        gameManager.GameOver();
+    }
+
     void OnTriggerEnter2D( Collider2D c ) {
         switch( c.tag ) {
             case "TerrainQuad":
-                gameManager.Pause(); // TODO: Play animation and show score
+                Die();
                 break;
         }
     }

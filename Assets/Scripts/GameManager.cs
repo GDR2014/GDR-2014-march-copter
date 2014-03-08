@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public bool IsPaused;
+    public static bool 
+        IsPaused,
+        IsGameOver;
+
     protected float previousTimeScale;
 
     void Start() {
+        IsGameOver = false;
         Time.timeScale = 1;
         Pause();
         StartCoroutine( WaitForFirstInput() );
@@ -28,9 +32,18 @@ public class GameManager : MonoBehaviour {
         else Pause();
     }
 
+    public void GameOver() {
+        Pause();
+        IsGameOver = true;
+    }
+
+    public static void ResetGame() {
+        Application.LoadLevel(0);
+    }
+
     IEnumerator WaitForFirstInput() {
         while( IsPaused ) {
-            if ( Input.GetMouseButton( 0 ) ) Unpause();
+            if ( InputManager.HoverHeld ) Unpause();
             yield return null;
         }
     }
