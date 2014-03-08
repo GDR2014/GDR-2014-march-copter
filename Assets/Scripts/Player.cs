@@ -37,6 +37,7 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter2D( Collider2D c ) {
         switch( c.tag ) {
+            case "Obstacle":
             case "TerrainQuad":
                 Die();
                 break;

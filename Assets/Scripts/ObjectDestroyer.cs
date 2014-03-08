@@ -7,6 +7,10 @@ public class ObjectDestroyer : MonoBehaviour {
             case "TerrainQuad": 
                 c.gameObject.transform.parent.Recycle();
                 break;
+            case "Obstacle":
+                Debug.Log("Recycling obstacle..");
+                c.gameObject.transform.Recycle();
+                break;
         }
     }
 }
