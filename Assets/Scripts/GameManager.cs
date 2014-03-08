@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
     protected float previousTimeScale;
 
     void Start() {
+        Time.timeScale = 1;
         Pause();
         StartCoroutine( WaitForFirstInput() );
     }

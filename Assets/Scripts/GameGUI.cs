@@ -8,7 +8,7 @@ public class GameGUI : MonoBehaviour {
 
     protected Vector3 matrixVector;
 
-    protected string debugControlHelp = "Press <R> to reset";
+    protected string debugControlHelp = "Press <R> to reset\nPress <P> to pause";
 
     void Awake() {
         matrixVector = new Vector3( Screen.width / NativeWidth, Screen.height / NativeHeight, 1 );
@@ -16,6 +16,11 @@ public class GameGUI : MonoBehaviour {
 
     void OnGUI() {
         GUI.matrix = Matrix4x4.TRS( Vector3.zero, Quaternion.identity, matrixVector );
-        GUI.Label(new Rect(10, 10, 150, 40), debugControlHelp );
+        DrawDebugHelpGUI();
+    }
+
+    void DrawDebugHelpGUI() {
+        GUI.skin.label.fontSize = 20;
+        GUI.Label( new Rect( 10, 10, 300, 80 ), debugControlHelp );
     }
 }

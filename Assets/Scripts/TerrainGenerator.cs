@@ -21,7 +21,7 @@ public class TerrainGenerator : MonoBehaviour {
     private TerrainSegment SpawnSegment() {
         Vector2 pos = transform.position;
         // TODO: Make better terrain algorithm
-        pos.y += (float) Math.Sin( (Time.time * 2 - .3) * 1.3 );
+        pos.y += (float) Math.Sin( (Time.timeSinceLevelLoad * 2 - .3) * 1.3 );
         //pos.y += Random.Range( -1.3f, 1.3f ); 
         return ObjectPool.Spawn( TerrainSegmentPrefab, pos );
     }
