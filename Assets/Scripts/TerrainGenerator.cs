@@ -39,7 +39,7 @@ public class TerrainGenerator : MonoBehaviour {
 
     private TerrainSegment SpawnObstacle() {
         Vector2 pos = transform.position;
-        //pos.y = Random.Range( -PostitionGenerator.MaxDeviation, PostitionGenerator.MaxDeviation );
+        pos.y = Random.Range( -PostitionGenerator.MaxDeviation, PostitionGenerator.MaxDeviation );
         return ObstaclePrefab.Spawn( pos );
     }
 
@@ -53,7 +53,7 @@ public class TerrainGenerator : MonoBehaviour {
     }
     
     public class PostitionGenerator {
-        public float MaxDeviation = 1.3f;
+        public static float MaxDeviation = 1.3f;
         private int segments = 5, currentSegment;
         private Vector2 Start, End;
         protected Vector2 P2 {
