@@ -3,16 +3,7 @@
 [RequireComponent(typeof(SpriteRenderer))]
 public class SoundToggle : MonoBehaviour {
 
-    private bool _muted;
-    public bool IsMuted {
-        get {
-            return _muted;
-        }
-        set {
-            _muted = value;
-            PlayerPrefs.SetInt("muted", _muted ? 0 : 1);
-        }
-    }
+    public bool IsMuted { get; set; }
     public Sprite OnSprite, OffSprite;
     AudioSource[] AudioSources;
     private SpriteRenderer spriteRenderer;
@@ -32,6 +23,7 @@ public class SoundToggle : MonoBehaviour {
         IsMuted = !IsMuted;
         SetVolume();
         SetSprite();
+        PlayerPrefs.SetInt("muted", IsMuted ? 1 : 0);
     }
 
     void SetVolume() {
