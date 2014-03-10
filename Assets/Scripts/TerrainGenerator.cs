@@ -30,7 +30,6 @@ public class TerrainGenerator : MonoBehaviour {
     void StartObstacleRoutine() { StartCoroutine( SpawnObstacleRoutine() ); }
 
     IEnumerator SpawnObstacleRoutine() {
-        Debug.Log("Spawning obstacle!");
         SpawnObstacle();
         float delay = Random.Range( ObstacleDelayMin, ObstacleDelayMax );
         yield return new WaitForSeconds(delay);

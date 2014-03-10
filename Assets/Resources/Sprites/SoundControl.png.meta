@@ -50,17 +50,17 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 187
-        height: 187
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: .5, y: .5}
     - name: SoundOn
       rect:
         serializedVersion: 2
-        x: 216
+        x: 128
         y: 0
-        width: 187
-        height: 187
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: .5, y: .5}
   spritePackingTag: 
