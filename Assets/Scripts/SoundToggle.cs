@@ -1,21 +1,13 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public class SoundToggle : MonoBehaviour {
+[RequireComponent( typeof( SpriteRenderer ) )]
+public class SoundToggle : ClickScript {
 
-    private bool _muted;
-    public bool IsMuted {
-        get {
-            return _muted;
-        }
-        set {
-            _muted = value;
-            PlayerPrefs.SetInt("muted", _muted ? 0 : 1);
-        }
-    }
     public Sprite OnSprite, OffSprite;
     AudioSource[] AudioSources;
     private SpriteRenderer spriteRenderer;
+
+    public bool IsMuted { get; set; }
 
     void Awake() {
         IsMuted = PlayerPrefs.GetInt( "muted", 0 ) > 0;
@@ -24,6 +16,7 @@ public class SoundToggle : MonoBehaviour {
     }
 
     void Start() {
+        base.Start();
         SetSprite();
         SetVolume();
     }
@@ -32,6 +25,7 @@ public class SoundToggle : MonoBehaviour {
         IsMuted = !IsMuted;
         SetVolume();
         SetSprite();
+        PlayerPrefs.SetInt( "muted", IsMuted ? 0 : 1 );
     }
 
     void SetVolume() {
@@ -43,7 +37,16 @@ public class SoundToggle : MonoBehaviour {
         spriteRenderer.sprite = IsMuted ? OffSprite : OnSprite;
     }
 
-    //void OnMouseDown() {
-    //    ToggleSound();
-    //}
+    protected override void OnClick() {
+        Debug.Log("Toggle clicked");
+        ToggleSound();
+    }
+
+    protected override void OnHeld() {
+        Debug.Log( "Toggle held" );
+    }
+
+    protected override void OnReleased() {
+        Debug.Log( "Toggle released" );
+    }
 }

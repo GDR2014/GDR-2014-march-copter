@@ -30,7 +30,6 @@ public class TerrainGenerator : MonoBehaviour {
     void StartObstacleRoutine() { StartCoroutine( SpawnObstacleRoutine() ); }
 
     IEnumerator SpawnObstacleRoutine() {
-        Debug.Log("Spawning obstacle!");
         SpawnObstacle();
         float delay = Random.Range( ObstacleDelayMin, ObstacleDelayMax );
         yield return new WaitForSeconds(delay);
@@ -47,8 +46,6 @@ public class TerrainGenerator : MonoBehaviour {
         Vector2 pos = transform.position;
         // TODO: Make better terrain algorithm
         pos.y = PosGen.Next;
-        //pos.y = MaxDeviation * (Mathf.PerlinNoise( Time.time * 2, 0 )-.5f);
-        //pos.y += (float) Math.Sin( (Time.timeSinceLevelLoad * 2 - .3) * MaxDeviation );
         return TerrainSegmentPrefab.Spawn( pos );
     }
     
