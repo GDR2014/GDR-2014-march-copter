@@ -43,7 +43,7 @@ public class SoundToggle : MonoBehaviour {
         spriteRenderer.sprite = IsMuted ? OffSprite : OnSprite;
     }
 
-    void OnMouseDown() {
-        ToggleSound();
-    }
+    //void OnMouseDown() {
+    //    ToggleSound();
+    //}
 }
