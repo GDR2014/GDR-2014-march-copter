@@ -34,8 +34,4 @@ public class SoundToggle : MonoBehaviour {
     void SetSprite() {
         spriteRenderer.sprite = IsMuted ? OffSprite : OnSprite;
     }
-
-    void OnMouseUpAsButton() {
-        ToggleSound();
-    }
 }
