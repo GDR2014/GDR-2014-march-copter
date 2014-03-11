@@ -2,10 +2,10 @@
 
 [RequireComponent(typeof(BoxCollider2D))]
 public abstract class ClickScript : MonoBehaviour {
-    
-    protected virtual void OnClick() { Debug.Log("Super click called");}
-    protected virtual void OnReleased() { Debug.Log( "Super released called" ); }
-    protected virtual void OnHeld() { Debug.Log( "Super held called" ); }
+
+    protected virtual void OnClick() {}
+    protected virtual void OnReleased() {}
+    protected virtual void OnHeld() {}
 
     protected bool IsClicked { get { return Input.GetMouseButtonDown( 0 ) && MouseIsOver; } }
     protected bool IsReleased { get { return Input.GetMouseButtonUp( 0 ) && MouseIsOver; } }
@@ -14,10 +14,9 @@ public abstract class ClickScript : MonoBehaviour {
     protected BoxCollider2D hotspot;
     protected Camera cam;
 
-
-     protected void Start() {
-         cam = FindObjectOfType<Camera>();
-         hotspot = GetComponent<BoxCollider2D>();
+    protected void Start() {
+        cam = FindObjectOfType<Camera>();
+        hotspot = GetComponent<BoxCollider2D>();
     }
 
     protected void Update() {

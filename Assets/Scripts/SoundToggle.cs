@@ -15,7 +15,7 @@ public class SoundToggle : ClickScript {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Start() {
+    new void Start() {
         base.Start();
         SetSprite();
         SetVolume();
@@ -25,7 +25,7 @@ public class SoundToggle : ClickScript {
         IsMuted = !IsMuted;
         SetVolume();
         SetSprite();
-        PlayerPrefs.SetInt( "muted", IsMuted ? 0 : 1 );
+        PlayerPrefs.SetInt( "muted", IsMuted ? 1 : 0 );
     }
 
     void SetVolume() {
@@ -38,15 +38,6 @@ public class SoundToggle : ClickScript {
     }
 
     protected override void OnClick() {
-        Debug.Log("Toggle clicked");
         ToggleSound();
-    }
-
-    protected override void OnHeld() {
-        Debug.Log( "Toggle held" );
-    }
-
-    protected override void OnReleased() {
-        Debug.Log( "Toggle released" );
     }
 }
