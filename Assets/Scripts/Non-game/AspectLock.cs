@@ -30,8 +30,6 @@ public class AspectLock : MonoBehaviour {
         scrWidth = Screen.width;
         scrHeight = Screen.height;
         scrAspect = (float)scrWidth / scrHeight;
-        Debug.Log("ScrWidth: " + scrWidth);
-        Debug.Log("ScrHeight: " + scrHeight);
         float a = texAspect * scrAspect;
         Vector2 scl = transform.localScale;
         switch( baseDimension ) {
@@ -44,7 +42,6 @@ public class AspectLock : MonoBehaviour {
                 scl.y = size;
                 break;
         }
-        Debug.Log("Scl: " + scl);
         transform.localScale = scl;
     }
 }

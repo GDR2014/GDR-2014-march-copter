@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    public GameGuiManager guiManager;
+
     public static bool 
         IsPaused,
         IsGameOver;
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver() {
         Pause();
+        guiManager.SetResetButtonVisibility(true);
         IsGameOver = true;
     }
 
