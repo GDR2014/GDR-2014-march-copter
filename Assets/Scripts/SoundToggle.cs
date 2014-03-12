@@ -1,17 +1,19 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public class SoundToggle : MonoBehaviour {
+[RequireComponent(typeof(GUITexture))]
+public class SoundToggle : GuiClickScript {
+
+    public Texture2D OnSprite, OffSprite;
+    AudioSource[] AudioSources;
+    private GUITexture texture;
 
     public bool IsMuted { get; set; }
-    public Sprite OnSprite, OffSprite;
-    AudioSource[] AudioSources;
-    private SpriteRenderer spriteRenderer;
 
-    void Awake() {
+    new void Awake() {
+        base.Awake();
         IsMuted = PlayerPrefs.GetInt( "muted", 0 ) > 0;
         AudioSources = FindObjectsOfType<AudioSource>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        texture = guiTexture;
     }
 
     void Start() {
@@ -23,7 +25,7 @@ public class SoundToggle : MonoBehaviour {
         IsMuted = !IsMuted;
         SetVolume();
         SetSprite();
-        PlayerPrefs.SetInt("muted", IsMuted ? 1 : 0);
+        PlayerPrefs.SetInt( "muted", IsMuted ? 1 : 0 );
     }
 
     void SetVolume() {
@@ -32,6 +34,10 @@ public class SoundToggle : MonoBehaviour {
     }
 
     void SetSprite() {
-        spriteRenderer.sprite = IsMuted ? OffSprite : OnSprite;
+        texture.texture = IsMuted ? OffSprite : OnSprite;
+    }
+
+    protected override void OnClick() {
+        ToggleSound();
     }
 }
