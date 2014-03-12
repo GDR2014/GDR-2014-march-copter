@@ -1,22 +1,22 @@
 ﻿using UnityEngine;
 
-[RequireComponent( typeof( SpriteRenderer ) )]
-public class SoundToggle : ClickScript {
+[RequireComponent(typeof(GUITexture))]
+public class SoundToggle : GuiClickScript {
 
-    public Sprite OnSprite, OffSprite;
+    public Texture2D OnSprite, OffSprite;
     AudioSource[] AudioSources;
-    private SpriteRenderer spriteRenderer;
+    private GUITexture texture;
 
     public bool IsMuted { get; set; }
 
-    void Awake() {
+    new void Awake() {
+        base.Awake();
         IsMuted = PlayerPrefs.GetInt( "muted", 0 ) > 0;
         AudioSources = FindObjectsOfType<AudioSource>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        texture = guiTexture;
     }
 
-    new void Start() {
-        base.Start();
+    void Start() {
         SetSprite();
         SetVolume();
     }
@@ -34,7 +34,7 @@ public class SoundToggle : ClickScript {
     }
 
     void SetSprite() {
-        spriteRenderer.sprite = IsMuted ? OffSprite : OnSprite;
+        texture.texture = IsMuted ? OffSprite : OnSprite;
     }
 
     protected override void OnClick() {
